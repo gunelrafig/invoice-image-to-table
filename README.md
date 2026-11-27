@@ -23,3 +23,13 @@ python app.py
 **Avtomatik** rejim əvvəlcə ingilis modeli ilə nömrələnmiş məhsul sətirlərini axtarır. Qaimə sxemi tanınmadıqda Azərbaycan dili modelinə keçir. Hər iki dili ayrıca seçmək də mümkündür. Nümunədəki qaimə sxemi tanındıqda yalnız məhsul cədvəli göstərilir və ixrac edilir.
 
 Proqram sözlərin şəkildəki mövqeyinə əsasən sətir və sütunları təxmin edir. Boş xanalar, çoxsətirli məhsul adları və əyri şəkillər sütunları sürüşdürə bilər. Excel xanaları mətn kimi saxlanır ki, məhsul kodlarının əvvəlindəki sıfırlar və onluq vergüllər qorunsun. JSON faylında `rows` açarı hər sətir üçün bir massiv saxlayır.
+
+## Ollama ilə ayrıca sınaq
+
+`Ollama-test.ps1` JPG və ya PNG şəklini lokal Ollama-ya göndərir və nəticəni PowerShell-də JSON kimi göstərir. Şəkli əvvəlcə məhsul cədvəlinə qədər kəsin ki, bank və əlaqə məlumatları modelə ötürülməsin. Sınaq üçün Ollama işləməli və `qwen3.5:4b` modeli serverdə yüklənmiş olmalıdır.
+
+```powershell
+.\Ollama-test.ps1 -ImagePath "C:\Qaimeler\mehsullar.jpg"
+```
+
+Başqa şəkil dəstəkli model üçün `-Model` parametrini verin. Cavabı orijinal qaimə ilə tutuşdurun. Tesseract tətbiqinin açılışı və Excel ixracı əvvəlki qaydada işləyir.
